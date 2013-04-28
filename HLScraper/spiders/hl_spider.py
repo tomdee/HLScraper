@@ -37,8 +37,8 @@ class HLSpider(CrawlSpider):
         fund['FundType'] = x.select("normalize-space(//tr/th[text()[contains(., 'Fund type')]]/../td/text())").extract()
         fund['NetInitialCharge'] = x.select("normalize-space(//tr/th[text()[contains(., 'Net initial charge')]]/../td/text())").extract()
         fund['NetAnnualCharge'] = x.select("normalize-space(//tr/th[text()[contains(., 'Net Annual charge')]]/../td/text())").extract()
-        fund['OtherExpenses'] = x.select("normalize-space(//tr/th[text()[contains(., 'Fund manager&apos;s other expenses')]]/../td/text())").extract()
-        fund['PerformanceFee'] = x.select("normalize-space(//tr/th[text()[contains(., 'Performance Fee')]]/../td/text())").extract()
+        fund['OtherExpenses'] = x.select("normalize-space(//tr/th[text()[contains(., \"Fund manager's other expenses\")]]/../td/text())").extract()
+        fund['PerformanceFee'] = x.select("normalize-space(//tr/th[text()[contains(., 'Performance fee')]]/../td/text())").extract()
         fund['PlatformFee'] = x.select("normalize-space(//tr/th[text()[contains(., 'HL Platform charge')]]/../td/text())").extract()
         
         fund['Wealth150'] = x.select("/html/body/div[@id='container']/div[@id='content']/div[@class='spacer-left-dbl']/div[@id='fund-section-content']/div[@class='spacer-bottom']/div[@id='security-title']/h1[@class='underline']/a/img/@src").extract()
